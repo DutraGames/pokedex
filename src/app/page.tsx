@@ -11,6 +11,8 @@ import { cn } from '@/lib/utils';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
+import PokeCard from '@/components/PokeCard';
+
 export default function Home() {
     return (
         <main className="flex min-h-screen flex-col items-center gap-4 p-24 w-screen">
@@ -47,6 +49,8 @@ export default function Home() {
                     <Button>Next</Button>
                 </CardFooter>
             </Card>
+
+            <PokeCard />
         </main>
     );
 }
