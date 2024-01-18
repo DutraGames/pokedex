@@ -26,6 +26,7 @@ export default function PokeCard() {
                 const response = await api.get(`/${id}`);
                 const parsedData = pokemonSchema.parse(response.data);
                 setData(parsedData);
+                console.log(parsedData);
             } catch (error) {
                 console.error('Erro na requisição:', error);
             }
@@ -34,10 +35,22 @@ export default function PokeCard() {
         fetchData();
     }, [id]);
 
+    const incrementId = () => {
+        if (id < 1023) {
+            setId(id + 1);
+        }
+    };
+
+    const decrementId = () => {
+        if (id > 1 && id) {
+            setId(id - 1);
+        }
+    };
+
     return (
         <Card
             className={cn(
-                'w-96 h-96 flex items-center flex-col justify-center'
+                'w-96 h-96 flex items-center flex-col justify-center  bg-primary-foreground dark:bg-foreground'
             )}
         >
             {data && (
@@ -50,7 +63,7 @@ export default function PokeCard() {
                             className={cn('gap-4 flex justify-center')}
                         >
                             {data.types.map((type) => (
-                                <Badge variant="outline" key={type.type.name}>
+                                <Badge variant="default" key={type.type.name}>
                                     {type.type.name}{' '}
                                 </Badge>
                             ))}
@@ -63,12 +76,12 @@ export default function PokeCard() {
                     >
                         <Avatar className={cn('w-48 h-48')}>
                             <AvatarImage src={data.sprites.front_default} />
-                            <AvatarFallback>Picachu</AvatarFallback>
+                            <AvatarFallback>{data.name}</AvatarFallback>
                         </Avatar>
                     </CardContent>
                     <CardFooter className={cn('gap-2')}>
-                        <Button onClick={() => setId(id - 1)}>Prev</Button>
-                        <Button onClick={() => setId(id + 1)}>Next</Button>
+                        <Button onClick={() => decrementId()}>Prev</Button>
+                        <Button onClick={() => incrementId()}>Next</Button>
                     </CardFooter>
                 </>
             )}
