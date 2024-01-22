@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { pokemonSchema } from '@/schemas/pokeSchema';
-import { api } from '@/utils/api';
-import { IPokemon } from '@/@types/pokemon';
+import { api } from '@/services/api';
+import { IPokemon } from '@/interfaces/pokemon.interface';
 import { Button } from '@/components/ui/button';
 import {
     Card,
