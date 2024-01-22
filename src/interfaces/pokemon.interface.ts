@@ -1,5 +1,4 @@
-export interface IPokemon {
-    name: string;
-    types: { type: { name: string } }[];
-    sprites: { front_default: string };
-}
+import { z } from 'zod';
+import { pokemonSchema } from '@/schemas/pokeSchema';
+
+export interface IPokemon extends z.infer<typeof pokemonSchema> {}
