@@ -4,7 +4,7 @@ A small fun with the [Pokémon API](https://pokeapi.co/). I use it and utilize [
 
 ## **Tecnologies used**
 
--   [ChadUI](https://ui.shadcn.com/)
+-   [ShadUI](https://ui.shadcn.com/)
 -   [TailwindCSS](https://tailwindcss.com/)
 -   [Typescript](https://www.typescriptlang.org/)
 -   [PokeAPI](https://pokeapi.co/)
