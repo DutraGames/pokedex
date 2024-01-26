@@ -9,7 +9,7 @@ A small fun with the [Pokémon API](https://pokeapi.co/). I use it and utilize [
 -   [Typescript](https://www.typescriptlang.org/)
 -   [PokeAPI](https://pokeapi.co/)
 -   [Next.js](https://nextjs.org/)
--   [Axios](hhttps://axios-http.com)
+-   [Axios](https://axios-http.com)
 -   [Zod](https://zod.dev/)
 
 **Dark Mode**:
